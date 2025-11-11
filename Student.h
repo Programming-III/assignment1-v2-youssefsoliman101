@@ -14,21 +14,10 @@ private:
     int yearLevel;
     string major;
 public:
-  Student() {
-
-}
-
-void display() {
-    cout<<"Year Level: "<<yearLevel<<endl;
-    cout<<"Major: "<<major<<endl;
-}
-Student(int yl, string m) {
-    yearLevel=yl;
-    major=m;
-}
-~Student() {
-
-}
+    Student();
+    Student(string n,int yl,string m);
+    void display();
+    ~Student();
 };
 
 

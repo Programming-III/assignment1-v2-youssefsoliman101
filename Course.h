@@ -18,13 +18,44 @@ private:
 
 public:
 
-    Course();
-    Course(string courseCode,string courseName,int maxStudents,Student* students,int currentStudents);
-    void addStudent(const Student& s);
-    void displayCourseInfo();
-    ~Course();
-    string getcourseCode();
-    string getcourseName();
+Course() {
+
+}
+Course(string courseCode, string courseName, int maxStudents, Student *students, int currentStudents) {
+    this->courseCode=courseCode;
+    this->courseName=courseName;
+    this->maxStudents=maxStudents;
+    this->students=students;
+    this->currentStudents=currentStudents;
+}
+void displayCourseInfo() {
+    cout<<"Course Code: "<<courseCode<<endl;
+    cout<<"Course Name: "<<courseName<<endl;
+    cout<<"Current Students: "<<currentStudents<<endl;
+    cout<<"Max Students: "<<maxStudents<<endl;
+}
+void addStudent(const Student &s) {
+    Student* newStudents=new Student[currentStudents+1];
+    for (int i=0;i<=currentStudents;i++) {
+        newStudents[i]=students[i];
+    }
+    newStudents[currentStudents+1]=s;
+    students=newStudents;
+    currentStudents++;
+    delete newStudents;
+}
+~Course() {
+    delete students;
+}
+
+getcourseCode() {
+    return courseCode;
+}
+
+getcourseName() {
+    return courseName;
+}
+
 };
 
 

@@ -15,7 +15,7 @@ private:
     int experienceYears;
 public:
     Instructor();
-    Instructor(string d,int ey);
+    Instructor(string n,string d,int ey);
     void display();
     ~Instructor();
 };

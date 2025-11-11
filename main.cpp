@@ -60,7 +60,8 @@ Student::~Student() {
 Instructor::Instructor() {
 
 }
-Instructor::Instructor(string d, int ey) {
+Instructor::Instructor(string n,string d, int ey) {
+    name=n;
     department=d;
     experienceYears=ey;
 }
@@ -125,7 +126,9 @@ string Course::getcourseName() {
 
 // ==================== Main Function ====================
 int main() {
-   
+   Student s1("Omar Nabil",2,"Informatics");
+    Instructor i1("Dr.Lina Khaled","Computer Science",5);
+    Course c1("CS101","Introduction to Programming",5,s1);
     
     return 0;
 }

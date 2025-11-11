@@ -10,7 +10,20 @@ using namespace std;
 
 // ==================== Person Class Implementation =========================
 
+Person::Person() {
 
+}
+Person::Person(string n, int id) {
+    name=n;
+    this->id=id;
+}
+void Person::display() {
+    cout<<"Name: "<<name<<endl;
+    cout<<"ID: "<<id<<endl;
+}
+Person::~Person(){
+
+}
 
 
 
@@ -18,6 +31,23 @@ using namespace std;
 
 
 // ==================== Student Class Implementation ====================
+
+Student::Student() {
+
+}
+
+void Student::display() {
+    cout<<"Year Level: "<<yearLevel<<endl;
+    cout<<"Major: "<<major<<endl;
+}
+Student::Student(string n,int yl, string m) {
+    name=n;
+    yearLevel=yl;
+    major=m;
+}
+Student::~Student() {
+
+}
 
 
 
@@ -27,11 +57,64 @@ using namespace std;
 // ==================== Instructor Class Implementation ====================
 
 
+Instructor::Instructor() {
+
+}
+Instructor::Instructor(string d, int ey) {
+    department=d;
+    experienceYears=ey;
+}
+void Instructor::display() {
+    cout<<"Department: "<<department<<endl;
+    cout<<"Experience Years: "<<experienceYears<<endl;
+}
+Instructor::~Instructor() {
+
+}
+
 
 
 
 
 // ==================== Course Class Implementation ====================
+
+
+
+Course::Course(string courseCode, string courseName, int maxStudents, Student *students, int currentStudents) {
+    this->courseCode=courseCode;
+    this->courseName=courseName;
+    this->maxStudents=maxStudents;
+    this->students=students;
+    this->currentStudents=currentStudents;
+}
+void Course::displayCourseInfo() {
+    cout<<"Course Code: "<<courseCode<<endl;
+    cout<<"Course Name: "<<courseName<<endl;
+    cout<<"Current Students: "<<currentStudents<<endl;
+    cout<<"Max Students: "<<maxStudents<<endl;
+}
+void Course::addStudent(const Student &s) {
+    Student* newStudents=new Student[currentStudents+1];
+    for (int i=0;i<=currentStudents;i++) {
+        newStudents[i]=students[i];
+    }
+    newStudents[currentStudents+1]=s;
+    students=newStudents;
+    currentStudents++;
+    delete newStudents;
+}
+Course::~Course() {
+    delete students;
+}
+
+string Course::getcourseCode() {
+    return courseCode;
+}
+
+string Course::getcourseName() {
+    return courseName;
+}
+
 
 
 

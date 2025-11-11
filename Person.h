@@ -8,24 +8,14 @@ using namespace std;
 
 
 class Person {
-private:
+protected:
     string name;
     int id;
 public:
-Person() {
-
-}
-Person(string n, int id) {
-    name=n;
-    this->id=id;
-}
-display() {
-    cout<<"Name: "<<name<<endl;
-    cout<<"ID: "<<id<<endl;
-}
-~Person(){
-
-}
+    Person();
+    Person(string n,int id);
+    void display();
+    ~Person();
 };
 
 

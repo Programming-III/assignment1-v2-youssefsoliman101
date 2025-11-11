@@ -14,22 +14,10 @@ private:
     string department;
     int experienceYears;
 public:
- Instructor() {
-
-}
-Instructor(string d, int ey) {
-    department=d;
-    experienceYears=ey;
-}
-display() {
-    cout<<"Department: "<<department<<endl;
-    cout<<"Experience Years: "<<experienceYears<<endl;
-}
-~Instructor() {
-
-}
-
-
+    Instructor();
+    Instructor(string d,int ey);
+    void display();
+    ~Instructor();
 };
 
 

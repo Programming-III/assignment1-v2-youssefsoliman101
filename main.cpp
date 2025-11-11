@@ -128,7 +128,8 @@ string Course::getcourseName() {
 int main() {
    Student s1("Omar Nabil",2,"Informatics");
     Instructor i1("Dr.Lina Khaled","Computer Science",5);
-    Course c1("CS101","Introduction to Programming",5,s1);
-    
+    Course c1("CS101","Introduction to Programming",5,s1,1);
+     s1.display();
+    i1.display();
     return 0;
 }
